@@ -1,0 +1,1 @@
+json.partial! "api/v1/blurbs/blurb", blurb: @blurb
