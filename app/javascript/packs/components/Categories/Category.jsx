@@ -1,10 +1,16 @@
 import React, { useState } from 'react'
 
 function Category(props) {
-  const { category } = props
+  const { category, selectCategories } = props
+  const [selected, setSelected] = useState(false)
+
+  const selectCategory = () => {
+    setSelected(!selected)
+    selectCategories(category.id)
+  }
 
   return (
-   <div>
+   <div className={selected ? 'category-display-name' : 'category-name'} onClick={selectCategory}>
     {category.name}
    </div>
   )
