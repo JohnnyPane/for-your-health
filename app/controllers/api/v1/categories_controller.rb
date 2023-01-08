@@ -6,17 +6,16 @@ class Api::V1::CategoriesController < ApplicationController
   end
 
   def show
-    format.json { render :show }
+    # format.json { render :show }
   end
 
   private
 
-  def set_blurb
+  def set_category
     @category = Category.find(params[:id])
   end
 
   def blurb_params
     params.require(:category).permit(:name)
   end
-
 end

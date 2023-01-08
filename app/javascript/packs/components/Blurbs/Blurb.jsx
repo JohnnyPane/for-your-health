@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 
 import axios from "axios";
-import setAxiosHeaders from "./AxiosHeaders";
+import setAxiosHeaders from "../AxiosHeaders";
 
 function Blurb(props) {
   const { blurb } = props

@@ -4,4 +4,7 @@ class PagesController < ApplicationController
 
   def blurbs
   end
+
+  def categories
+  end
 end

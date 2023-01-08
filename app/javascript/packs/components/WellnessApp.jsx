@@ -1,30 +1,26 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client';
-import Blurbs from './Blurbs'
+import Blurbs from './Blurbs/Blurbs'
+import Categories from './Categories/Categories';
 
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
+  createBrowserRouter,
+  RouterProvider,
 } from "react-router-dom";
 
-class WellnessApp extends React.Component {
-  constructor(props) {
-    super(props);
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Blurbs />,
+  },
+  {
+    path: "/categories",
+    element: <Categories />
   }
-  
-  render() {
-    return (
-      <>
-        <Blurbs />
-      </>
-    );
-  }
-}
+]);
 
 document.addEventListener('turbolinks:load', () => {
   const container = document.getElementById('wellness-app');
-  const root = createRoot(container); // createRoot(container!) if you use TypeScript
-  root.render(<WellnessApp tab="home" />);
+  const root = createRoot(container);
+  root.render(<RouterProvider router={router} />);
 })
