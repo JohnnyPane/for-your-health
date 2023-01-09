@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function Category(props) {
+function UserCategoryItem(props) {
   const { category } = props
 
   return (
@@ -10,4 +10,4 @@ function Category(props) {
   )
 }
 
-export default Category
+export default UserCategoryItem

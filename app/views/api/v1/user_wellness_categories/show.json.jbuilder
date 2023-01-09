@@ -1,0 +1,1 @@
+json.partial! "api/v1/user_wellness_categories/user_wellness_category", resources: @resources, category: @category

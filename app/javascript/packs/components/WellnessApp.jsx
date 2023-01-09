@@ -1,8 +1,9 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client';
-import Blurbs from './Blurbs/Blurbs'
+import Blurbs from './Blurbs/Blurbs';
 import Categories from './Categories/Categories';
 import Profile from './ProfilePage/Profile';
+import UserCategory from './UserCategories/UserCategory';
 
 import {
   createBrowserRouter,
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/user/:id",
     element: <Profile />
+  },
+  {
+    path: "/user/:id/categories/:categoryId",
+    element: <UserCategory />
   }
 ]);
 

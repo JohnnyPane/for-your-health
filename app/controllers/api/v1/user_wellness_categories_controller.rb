@@ -5,6 +5,11 @@ class Api::V1::UserWellnessCategoriesController < ApplicationController
     @categories = current_user.categories
   end
 
+  def show
+    @category = Category.find(params[:id])
+    @resources = current_user.wellness_resources.where(category_id: params[:id])
+  end
+
   def create
 
   end

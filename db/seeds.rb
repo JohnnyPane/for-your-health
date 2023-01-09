@@ -19,3 +19,11 @@ end
 ["Exercise", "Sustainability", "Food", "Mental Health", "Outdoors", "Community", "Meditation", "Friends", "Family", "Hobbies"].each do |category|
     Category.create(name: category, top_level: true)
 end
+
+5.times do |i|
+    User.first.wellness_resources.create(
+        title: "Resource #{i}", 
+        url: "https://www.siftandsimmer.com/pork-mazesoba-ramen-noodles/",
+        category_id: 2,
+    )
+end

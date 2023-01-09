@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   authenticated :user do
     root "pages#blurbs", as: :authenticated_root
     resources :categories, only: [:index, :show], to: "pages#blurbs"
-    resources :user, only: [:index, :show], to: "pages#blurbs"
+    resources :user, only: [:index, :show], to: "pages#blurbs" 
+    resources :user, only: [:show] do
+      resources :categories, only: [:show], to: "pages#blurbs"
+    end
   end
 
   root 'pages#home'
