@@ -2,6 +2,7 @@ import React from 'react'
 import { createRoot } from 'react-dom/client';
 import Blurbs from './Blurbs/Blurbs'
 import Categories from './Categories/Categories';
+import Profile from './ProfilePage/Profile';
 
 import {
   createBrowserRouter,
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/categories",
     element: <Categories />
+  },
+  {
+    path: "/user/:id",
+    element: <Profile />
   }
 ]);
 

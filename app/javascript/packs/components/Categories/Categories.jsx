@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react"
-import axios from "axios"
+import axios from 'axios'
+import setAxiosHeaders from "../AxiosHeaders"
 import Category from "./Category"
 
 function Categories() {
@@ -10,6 +11,12 @@ function Categories() {
     let response = await axios("/api/v1/categories")
     setCategories(response.data)
   }, [])
+
+  const getUserCategories =  async () => {
+    let response = await axios("api/v1/user_wellness_categories")
+    let user_categories = response.data.map(userCategory => userCategory.id)
+    setSelectedCategories(user_categories)
+  }
 
   const selectCategories = (categoryId) => {
     if (selectedCategories.includes(categoryId)) {
@@ -22,8 +29,22 @@ function Categories() {
   }
 
   useEffect(() => {
+    getUserCategories()
     getCategories()
   }, [])
+
+  const createUserCategories = (e) => {
+    e.preventDefault()
+    setAxiosHeaders()
+    axios
+      .post('/api/v1/categories', {
+        category_ids: selectedCategories,
+        select_categories: true
+      })
+      .then(response => {
+        console.log("Created Categories!")
+      })
+  }
 
   return (
     <>
@@ -34,9 +55,13 @@ function Categories() {
             key={category.id}
             category={category}
             selectCategories={selectCategories}
+            preSelected={selectedCategories.includes(category.id)}
           />
         ))}
       </div>
+      <button className="btn btn-outline-success btn-block" onClick={createUserCategories}>
+          Save Categories
+      </button>
     </>
   )
 }
