@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_09_025839) do
+ActiveRecord::Schema.define(version: 2023_01_10_010414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,27 @@ ActiveRecord::Schema.define(version: 2023_01_09_025839) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "users_wellness_groups", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "wellness_group_id"
+    t.index ["user_id"], name: "index_users_wellness_groups_on_user_id"
+    t.index ["wellness_group_id"], name: "index_users_wellness_groups_on_wellness_group_id"
+  end
+
+  create_table "wellness_groups", force: :cascade do |t|
+    t.string "name"
+    t.string "mission"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "wellness_groups_categories", force: :cascade do |t|
+    t.bigint "category_id"
+    t.bigint "wellness_group_id"
+    t.index ["category_id"], name: "index_wellness_groups_categories_on_category_id"
+    t.index ["wellness_group_id"], name: "index_wellness_groups_categories_on_wellness_group_id"
   end
 
   create_table "wellness_resources", force: :cascade do |t|

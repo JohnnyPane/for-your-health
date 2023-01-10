@@ -1,0 +1,1 @@
+json.extract! wellness_group, :id, :name, :mission

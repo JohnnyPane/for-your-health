@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     resources :user, only: [:index, :show], to: "pages#blurbs" 
     resources :user, only: [:show] do
       resources :categories, only: [:show], to: "pages#blurbs"
+      resources :wellness_group, to: "pages#blurbs"
     end
+    resources :wellness_groups, to: "pages#blurbs"
   end
 
   root 'pages#home'
@@ -16,6 +18,9 @@ Rails.application.routes.draw do
       resources :blurbs, only: [:index, :show, :create, :update, :destroy]
       resources :categories, only: [:index, :show, :create]
       resources :user_wellness_categories, only: [:index, :show]
+      resources :wellness_groups do
+        get 'index_user_wellness_groups', on: :collection
+      end
     end
   end
 end
