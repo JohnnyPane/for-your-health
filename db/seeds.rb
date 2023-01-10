@@ -16,7 +16,7 @@ User.all.each do |u|
     end
 end
 
-["Exercise", "Sustainability", "Food", "Mental Health", "Outdoors", "Community", "Meditation", "Friends", "Family", "Hobbies"].each do |category|
+["Exercise", "Sustainability", "Food", "Mental Health", "Financial", "Outdoors", "Community", "Meditation", "Friends", "Family", "Hobbies"].each do |category|
     Category.create(name: category, top_level: true)
 end
 
@@ -25,5 +25,18 @@ end
         title: "Resource #{i}", 
         url: "https://www.siftandsimmer.com/pork-mazesoba-ramen-noodles/",
         category_id: 2,
+    )
+end
+
+User.first.wellness_groups.create(name: "HEC Paris")
+WellnessGroup.first.categories << Category.first
+
+3.times do |i|
+    WellnessGroup.first.wellness_activities.create(
+        name: "Group Exercise #{i}",
+        activity_type: "Exercise",
+        category_id: 1,
+        start_time: Time.now + i.hours,
+        end_time: Time.now + (i + 1).hours
     )
 end

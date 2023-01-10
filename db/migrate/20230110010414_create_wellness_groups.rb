@@ -12,7 +12,7 @@ class CreateWellnessGroups < ActiveRecord::Migration[6.1]
       t.belongs_to :wellness_group
     end
 
-    create_table :wellness_groups_categories do |t|
+    create_table :categories_wellness_groups do |t|
       t.belongs_to :category
       t.belongs_to :wellness_group
     end
