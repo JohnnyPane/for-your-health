@@ -1,0 +1,1 @@
+json.extract! wellness_activity, :id, :name, :activity_type, :start_time, :end_time

@@ -19,12 +19,16 @@ Rails.application.routes.draw do
       resources :blurbs, only: [:index, :show, :create, :update, :destroy]
       resources :categories, only: [:index, :show, :create]
       resources :wellness_activities do 
-        get 'group_activities', on: :collection
-        get 'user_activties', on: :collection
+        collection do 
+          get "group_activities/:id" => "wellness_activities#group_activities"
+          get "user_activities/:id" => "wellness_activities#user_activities"
+        end
       end
       resources :user_wellness_categories, only: [:index, :show]
       resources :wellness_groups do
-        get 'index_user_wellness_groups', on: :collection
+        collection do
+          get "index_user_wellness_groups"
+        end
       end
     end
   end
