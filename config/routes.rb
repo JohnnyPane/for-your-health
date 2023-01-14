@@ -16,6 +16,11 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
+      resources :users do 
+        collection do 
+          get "session_user" => "users#session_user"
+        end
+      end
       resources :blurbs, only: [:index, :show, :create, :update, :destroy]
       resources :categories, only: [:index, :show, :create]
       resources :wellness_activities do 

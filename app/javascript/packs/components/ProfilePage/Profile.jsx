@@ -2,15 +2,18 @@ import React, { useState } from 'react'
 import UserCategories from '../UserCategories/UserCategories'
 import WellnessGroups from '../WellnessGroups/WellnessGroups'
 import WellnessActivities from '../WellnessActivities/WellnessActivities'
+import Navbar from '../Navbar/Navbar'
 
 function Profile() {
 
   return (
-   <div className='user-categories-wrapper'>
-    <UserCategories/>
-    <WellnessGroups/>
-    <WellnessActivities />
-   </div>
+    <div>
+      <div className='user-categories-wrapper'>
+        <UserCategories/>
+        <WellnessGroups/>
+        <WellnessActivities />
+      </div>
+    </div>
   )
 }
 
