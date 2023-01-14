@@ -1,0 +1,1 @@
+json.array! @wellness_resources, partial: "api/v1/wellness_resources/wellness_resource", as: :wellness_resource

@@ -15,8 +15,6 @@ function WellnessActivities() {
     }
   
   const getWellnessActivities =  async () => {
-    console.log(path)
-    console.log("CHECKING FOR ACTIVITIES")
     let response = await axios.get(path)
     let activities = response.data
     setWellnessActivities(activities)

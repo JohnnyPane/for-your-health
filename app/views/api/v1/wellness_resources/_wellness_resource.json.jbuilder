@@ -1,0 +1,1 @@
+json.extract! wellness_resource, :id, :title, :url, :body

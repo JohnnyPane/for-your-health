@@ -23,6 +23,7 @@ Rails.application.routes.draw do
       end
       resources :blurbs, only: [:index, :show, :create, :update, :destroy]
       resources :categories, only: [:index, :show, :create]
+      resources :wellness_resources
       resources :wellness_activities do 
         collection do 
           get "group_activities/:id" => "wellness_activities#group_activities"
