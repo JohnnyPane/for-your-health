@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
-
 import axios from 'axios'
 import setAxiosHeaders from "../AxiosHeaders";
 
@@ -75,7 +73,3 @@ function BlurbForm(props)  {
 }
 
 export default BlurbForm
-
-// BlurbForm.propTypes = {
-//   createBlurb: PropTypes.func.isRequired,
-// }

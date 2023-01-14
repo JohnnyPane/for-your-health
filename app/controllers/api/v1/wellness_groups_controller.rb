@@ -5,6 +5,7 @@ class Api::V1::WellnessGroupsController < ApplicationController
 
   def show
     @wellness_group = WellnessGroup.find(params[:id])
+    @group_categories = @wellness_group.categories
   end
 
   def index_user_wellness_groups

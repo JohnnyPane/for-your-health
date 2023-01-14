@@ -7,8 +7,6 @@ import UserCategoryItem from "./UserCategoryItem"
 function UserCategories(props) {
   const user = useOutletContext()
   const [userCategories, setUserCategories] = useState([])
-
-  console.log(user)
   
   const getUserCategories =  async () => {
     let response = await axios.get("/api/v1/user_wellness_categories")

@@ -16,7 +16,7 @@ User.all.each do |u|
     end
 end
 
-["Exercise", "Sustainability", "Food", "Mental Health", "Financial", "Outdoors", "Community", "Meditation", "Friends", "Family", "Hobbies"].each do |category|
+["Exercise", "Conscious Consumerism", "Sustainability", "Food", "Mental Health", "Financial", "Outdoors", "Community", "Meditation", "Friends", "Family", "Hobbies"].each do |category|
     Category.create(name: category, top_level: true)
 end
 

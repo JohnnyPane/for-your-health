@@ -13,7 +13,6 @@ function UserCategory() {
     let response = await axios(`/api/v1/user_wellness_categories/${categoryId}`)
     let category = response.data.category
     let resources = response.data.resources
-    console.log(resources)
     setUserCategory(category)
     setUserResources(resources)
   }

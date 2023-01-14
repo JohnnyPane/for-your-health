@@ -1,0 +1,1 @@
+json.partial! "api/v1/wellness_groups/wellness_group", wellness_group: @wellness_group, group_categories: @group_categories

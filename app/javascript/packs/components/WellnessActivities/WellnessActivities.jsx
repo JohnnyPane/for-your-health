@@ -8,13 +8,15 @@ function WellnessActivities() {
   const [wellnessActivities, setWellnessActivities] = useState([])
   const { userId, groupId } = useParams()
   let path = "/api/v1/wellness_activities/"
-  if (userId) {
+  if (userId && !groupId) {
       path += "user_activities/" + userId
     } else if (groupId) {
-      path += "group_activities"
+      path += "group_activities/" + groupId
     }
   
   const getWellnessActivities =  async () => {
+    console.log(path)
+    console.log("CHECKING FOR ACTIVITIES")
     let response = await axios.get(path)
     let activities = response.data
     setWellnessActivities(activities)

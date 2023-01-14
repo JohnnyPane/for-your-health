@@ -4,10 +4,13 @@ import axios from 'axios'
 
 import Blurbs from './Blurbs/Blurbs';
 import Categories from './Categories/Categories';
-import Category from './Categories/Category'
+import Category from './Categories/Category';
+import Navbar from './Navbar/Navbar';
 import Profile from './ProfilePage/Profile';
 import UserCategory from './UserCategories/UserCategory';
-import Navbar from './Navbar/Navbar';
+import WellnessGroups from './WellnessGroups/WellnessGroups';
+import WellnessGroup from './WellnessGroups/WellnessGroup';
+
 
 import {
   createBrowserRouter,
@@ -28,7 +31,7 @@ const router = createBrowserRouter([
         element: <Categories />
       },
       {
-        path: "/categories/:id",
+        path: "/categories/:categoryId",
         element: <Category />
       },
       {
@@ -36,8 +39,16 @@ const router = createBrowserRouter([
         element: <Profile />
       },
       {
-        path: "/user/:id/categories/:categoryId",
+        path: "/user/:userId/categories/:categoryId",
         element: <UserCategory />
+      },
+      {
+        path: "/user/:userId/groups",
+        element: <WellnessGroups />
+      },
+      {
+        path: "/user/:userId/groups/:groupId",
+        element: <WellnessGroup />
       }
     ]
   }

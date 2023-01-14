@@ -6,10 +6,10 @@ Rails.application.routes.draw do
     resources :user, only: [:index, :show], to: "pages#blurbs" 
     resources :user, only: [:show] do
       resources :categories, only: [:show], to: "pages#blurbs"
-      resources :wellness_group, to: "pages#blurbs"
+      resources :wellness_groups, to: "pages#blurbs", path: "groups"
       resources :wellness_activities, to: "pages#blurbs"
     end
-    resources :wellness_groups, to: "pages#blurbs"
+    resources :wellness_groups, to: "pages#blurbs", path: "groups"
   end
 
   root 'pages#home'

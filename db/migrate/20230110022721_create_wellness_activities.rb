@@ -3,8 +3,9 @@ class CreateWellnessActivities < ActiveRecord::Migration[6.1]
     create_table :wellness_activities do |t|
       t.string :name
       t.string :activity_type
-      t.date :start_time
-      t.date :end_time
+      t.datetime :start_time
+      t.datetime :end_time
+      t.boolean :completed
       t.integer :wellness_group_id
       t.integer :category_id
 

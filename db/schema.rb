@@ -74,8 +74,9 @@ ActiveRecord::Schema.define(version: 2023_01_10_022721) do
   create_table "wellness_activities", force: :cascade do |t|
     t.string "name"
     t.string "activity_type"
-    t.date "start_time"
-    t.date "end_time"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.boolean "completed"
     t.integer "wellness_group_id"
     t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
