@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { Link, Outlet } from "react-router-dom"
+import { Link, Outlet, useLocation } from "react-router-dom"
 import axios from 'axios'
 
 import WellnessResourceForm from '../UserResources/WellnessResourceForm'
 import UserWellnessResources from '../UserResources/UserWellnessResources'
 
 function Navbar(props) {
+  const location = useLocation()
+  let onRootPath = location.pathname == '/'
+
   const [user, setUser] = useState()
   const [userCategories, setUserCategories] = useState([])
   

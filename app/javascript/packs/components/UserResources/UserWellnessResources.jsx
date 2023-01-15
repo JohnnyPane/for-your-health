@@ -8,7 +8,6 @@ function UserWellnessResources(props) {
   
   const getUserWellnessResources =  async () => {
     let response = await axios.get("/api/v1/wellness_resources")
-    console.log(response.data)
     let userResources = response.data
     setUserResources(userResources)
   }
@@ -24,8 +23,8 @@ function UserWellnessResources(props) {
         {UserWellnessResources && UserWellnessResources.map(resource => (
          // <Link to={`/user/${user.id}/categories/${category.id}`} >
             <UserResourceItem
-              key={resource.id}
-              resource={resource}
+              key={resource.wellness_resource.id}
+              resource={resource.wellness_resource}
             />
          // </Link>
         ))}

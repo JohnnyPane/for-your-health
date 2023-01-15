@@ -66,9 +66,9 @@ function WellnessResourceForm(props)  {
               <label>Choose a Category:</label>
 
               <select name="categories" onChange={handleCategoryInput}>
-                <option value="">{}</option>
+                <option value="" key="0">{}</option>
                 {categories.map(category => (
-                  <option value={category.id}>{category.name}</option>
+                  <option value={category.id} key={category.id}>{category.name}</option>
                 ))}
               </select>
             </>
