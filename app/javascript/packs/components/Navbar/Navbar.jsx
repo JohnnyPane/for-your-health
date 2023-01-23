@@ -30,17 +30,23 @@ function Navbar(props) {
   }, [])
 
   return (
-   <div className='navbar-wrapper'>
-    { user && 
-      <div>
-        <Link to={`/user/${user.id}/groups`}>Groups</Link>
-        <Link to={`/user/${user.id}`}>Profile</Link>
-      </div> 
-    }
-    <UserWellnessResources />
-    <WellnessResourceForm categories={userCategories} />
-    <Outlet context={user} />
-   </div>
+    <>
+      <div className='navbar-wrapper'>
+        { user && 
+          <div className='navbar-links'>
+            <Link to={``} className="nav-link">
+              Wellness App
+              <i class="fa-solid fa-spa" style={{ paddingLeft: "5px" }}></i>
+            </Link>
+            <Link to={`/user/${user.id}/groups`} className="nav-link">Groups</Link>
+            <Link to={`/user/${user.id}`} className="nav-link">Profile</Link>
+          </div> 
+        }
+      </div>
+      <UserWellnessResources />
+      <WellnessResourceForm categories={userCategories} />
+      <Outlet context={user} />
+    </>
   )
 }
 

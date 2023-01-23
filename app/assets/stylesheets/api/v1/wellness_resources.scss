@@ -1,3 +1,36 @@
 // Place all the styles related to the api/v1/wellness_resources controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.resource-preview {
+  display: flex;
+  justify-content: center;
+}
+
+.resource-preview-wrapper {
+  display: flex;
+  width: 800px;
+  height: 120px;
+  font-size: 12px;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+}
+
+.resource-image-wrapper {
+  width: 230px;
+  height: inherit;
+}
+
+.resource-preview-image {
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  border-radius: 8px 0px 0px 8px;
+  padding-bottom: 1px;
+}
+
+.resource-preview-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-left: 10px;
+}
