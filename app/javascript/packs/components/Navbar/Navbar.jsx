@@ -3,6 +3,7 @@ import { Link, Outlet, useLocation } from "react-router-dom"
 import axios from 'axios'
 
 import WellnessResourceForm from '../UserResources/WellnessResourceForm'
+import WellnessActivityForm from '../WellnessActivities/WellnessActivityForm'
 import UserWellnessResources from '../UserResources/UserWellnessResources'
 
 function Navbar(props) {
@@ -11,7 +12,14 @@ function Navbar(props) {
 
   const [user, setUser] = useState()
   const [userCategories, setUserCategories] = useState([])
-  
+  const [addingResource, setAddingResource] = useState(false)
+  const [addingActivity, setAddingActivity] = useState(false)
+
+  useEffect(() => {
+    getCurrentUser()
+    getUserCategories()
+  }, [])
+
   const getCurrentUser =  async () => {
     let response = await axios.get("/api/v1/users/session_user")
     let currentUser = response.data
@@ -24,10 +32,13 @@ function Navbar(props) {
     setUserCategories(user_categories)
   }
 
-  useEffect(() => {
-    getCurrentUser()
-    getUserCategories()
-  }, [])
+  const toggleResourceForm = () => {
+    setAddingResource(!addingResource)
+  }
+
+  const toggleActivityForm = () => {
+    setAddingActivity(!addingActivity)
+  }
 
   return (
     <>
@@ -45,8 +56,16 @@ function Navbar(props) {
           </div> 
         }
       </div>
-      {/* <UserWellnessResources />
-      <WellnessResourceForm categories={userCategories} /> */}
+      {/* <UserWellnessResources /> */}
+      <button onClick={toggleResourceForm}> Add Resource </button>
+      <button onClick={toggleActivityForm}> Add Activity </button>
+      {
+        addingResource && <WellnessResourceForm categories={userCategories} />
+      }
+      {
+        addingActivity && <WellnessActivityForm categories={userCategories} />
+      }
+    
       <Outlet context={user} />
     </>
   )

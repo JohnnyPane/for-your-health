@@ -4,7 +4,7 @@ import axios from 'axios'
 import setAxiosHeaders from "../AxiosHeaders";
 
 function WellnessActivityForm(props)  {
-   const { categories } = props
+  const { categories } = props
   const { userId, groupId } = useParams()
 
   const [name, setName] = useState("")
