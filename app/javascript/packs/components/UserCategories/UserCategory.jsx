@@ -19,6 +19,8 @@ function UserCategory() {
 
   useEffect(() => {
     getUserCategory()
+    console.log(userResources)
+    console.log("YOU'VE GOT RESOURCES")
   }, [])
 
   return (

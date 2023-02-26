@@ -9,4 +9,5 @@ json.resources @resources do |resource|
   json.title resource.title
   json.body resource.body
   json.url resource.url
+  json.preview_data resource.resource_preview
 end

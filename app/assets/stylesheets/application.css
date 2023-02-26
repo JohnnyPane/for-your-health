@@ -27,10 +27,16 @@
   border-bottom: 1px solid black;
 }
 
+.navbar-content{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
 .navbar-links {
   display: flex;
-  width: 20%;
-  justify-content: space-around;
+  width: 30%;
+  justify-content: space-evenly;
 }
 
 .nav-link {

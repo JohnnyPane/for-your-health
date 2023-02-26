@@ -4,7 +4,7 @@ import ResourcePreview from "./ResourcePreview"
 function UserResourceItem(props) {
   const { resource } = props
   let previewData = resource.preview_data
-  let hasPreview = Object.keys(previewData).length > 0 ? true : false
+  let hasPreview = previewData && Object.keys(previewData).length > 0 ? true : false
 
   return (
     <div className="resource-item-wrapper">

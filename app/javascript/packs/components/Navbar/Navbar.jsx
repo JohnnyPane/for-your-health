@@ -33,18 +33,20 @@ function Navbar(props) {
     <>
       <div className='navbar-wrapper'>
         { user && 
-          <div className='navbar-links'>
+          <div className='navbar-content'>
             <Link to={``} className="nav-link">
               Wellness App
-              <i class="fa-solid fa-spa" style={{ paddingLeft: "5px" }}></i>
+              <i className="fa-solid fa-spa" style={{ paddingLeft: "5px" }}></i>
             </Link>
-            <Link to={`/user/${user.id}/groups`} className="nav-link">Groups</Link>
-            <Link to={`/user/${user.id}`} className="nav-link">Profile</Link>
+            <div className='navbar-links'>
+              <Link to={`/user/${user.id}/groups`} className="nav-link">Groups</Link>
+              <Link to={`/user/${user.id}`} className="nav-link">Profile</Link>
+            </div>
           </div> 
         }
       </div>
-      <UserWellnessResources />
-      <WellnessResourceForm categories={userCategories} />
+      {/* <UserWellnessResources />
+      <WellnessResourceForm categories={userCategories} /> */}
       <Outlet context={user} />
     </>
   )
