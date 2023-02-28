@@ -28,7 +28,7 @@
   height: 100vh;
   align-items: center;
   justify-content: center;
-  /* border-bottom: 1px solid black; */
+  border-right: 1px solid lightgray;
 }
 
 .navbar-content{

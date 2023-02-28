@@ -8,7 +8,7 @@ class Api::V1::WellnessActivitiesController < ApplicationController
   end
   
   def create
-    @activity = current_user.wellness_activities.build({
+    @activity = WellnessActivity.new({
       name: params[:activity][:name],
       category_id: params[:activity][:category_id],
       wellness_group_id: params[:activity][:group_id],
@@ -17,6 +17,7 @@ class Api::V1::WellnessActivitiesController < ApplicationController
     })
     respond_to do |format|
       if @activity.save
+        @activity.users << current_user
         format.json { render :show, status: :created, location: api_v1_wellness_activity_path(@activity) }
       else
         format.json { render json: @activity.errors, status: :unprocessable_entity }
