@@ -4,7 +4,7 @@ import axios from 'axios'
 import setAxiosHeaders from "../AxiosHeaders";
 
 function WellnessActivityForm(props)  {
-  const { categories } = props
+  const { categories, toggleActivityForm } = props
   const { userId, groupId } = useParams()
 
   const [name, setName] = useState("")
@@ -59,9 +59,10 @@ function WellnessActivityForm(props)  {
         },
       })
       .then(response => {
-        const activity = response.data
+        const activity = response
         console.log("CREATED ACTIVITY")
         console.log(activity)
+        toggleActivityForm()
         // props.createActivity(activity)
       })
       .catch(error => {

@@ -3,7 +3,7 @@ import axios from 'axios'
 import setAxiosHeaders from "../AxiosHeaders";
 
 function WellnessResourceForm(props)  {
-  const { categories } = props
+  const { categories, toggleResourceForm } = props
   const [title, setTitle] = useState("")
   const [resourceUrl, setResourceUrl] = useState("")
   const [resourceBody, setResourceBody] = useState("")
@@ -41,6 +41,7 @@ function WellnessResourceForm(props)  {
       })
       .then(response => {
         const activity = response.data
+        toggleResourceForm()
       })
       .catch(error => {
         console.log(error)

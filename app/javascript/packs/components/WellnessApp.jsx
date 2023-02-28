@@ -20,7 +20,7 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navbar />,
+    element: <Navbar className="nav-bar" />,
     children: [
       {
         path: "/blurbs",
@@ -28,27 +28,27 @@ const router = createBrowserRouter([
       },
       {
         path: "/categories",
-        element: <Categories />
+        element: <Categories className="page-content" />
       },
       {
         path: "/categories/:categoryId",
-        element: <Category />
+        element: <Category className="page-content" />
       },
       {
         path: "/user/:userId",
-        element: <Profile />
+        element: <Profile className="page-content" />
       },
       {
         path: "/user/:userId/categories/:categoryId",
-        element: <UserCategory />
+        element: <UserCategory className="page-content" />
       },
       {
         path: "/user/:userId/groups",
-        element: <WellnessGroups />
+        element: <WellnessGroups className="page-content" />
       },
       {
         path: "/user/:userId/groups/:groupId",
-        element: <WellnessGroup />
+        element: <WellnessGroup className="page-content" />
       }
     ]
   }

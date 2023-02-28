@@ -52,18 +52,26 @@ function Navbar(props) {
             <div className='navbar-links'>
               <Link to={`/user/${user.id}/groups`} className="nav-link">Groups</Link>
               <Link to={`/user/${user.id}`} className="nav-link">Profile</Link>
+              <button className="form-toggle-button" onClick={toggleResourceForm}>Resource +</button>
+              <button className="form-toggle-button" onClick={toggleActivityForm}>Activity +</button>
             </div>
           </div> 
         }
       </div>
       {/* <UserWellnessResources /> */}
-      <button onClick={toggleResourceForm}> Add Resource </button>
-      <button onClick={toggleActivityForm}> Add Activity </button>
       {
-        addingResource && <WellnessResourceForm categories={userCategories} />
+        addingResource && 
+        <WellnessResourceForm 
+          categories={userCategories}
+          toggleResourceForm={toggleResourceForm}
+        />
       }
       {
-        addingActivity && <WellnessActivityForm categories={userCategories} />
+        addingActivity && 
+        <WellnessActivityForm 
+          categories={userCategories} 
+          toggleActivityForm={toggleActivityForm} 
+        />
       }
     
       <Outlet context={user} />
