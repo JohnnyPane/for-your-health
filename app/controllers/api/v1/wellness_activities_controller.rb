@@ -36,6 +36,9 @@ class Api::V1::WellnessActivitiesController < ApplicationController
     render :index
   end
 
+  def user_activities_count_by_category
+  end
+
   private
   
   def activity_dates
