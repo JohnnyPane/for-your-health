@@ -1,0 +1,1 @@
+json.activities @activities_by_category

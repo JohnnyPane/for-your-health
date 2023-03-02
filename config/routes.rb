@@ -28,6 +28,7 @@ Rails.application.routes.draw do
         collection do 
           get "group_activities/:id" => "wellness_activities#group_activities"
           get "user_activities/:id" => "wellness_activities#user_activities"
+          get "user_activities_by_category/:id" => "wellness_activities#user_activities_by_category"
         end
       end
       resources :user_wellness_categories, only: [:index, :show]

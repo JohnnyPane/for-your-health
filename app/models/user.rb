@@ -11,4 +11,12 @@ class User < ApplicationRecord
   has_and_belongs_to_many :wellness_groups
   has_and_belongs_to_many :wellness_activities
 
+  def activity_by_category_breakdown
+    activities_by_category = wellness_activities.group_by { |activity| activity.category.name }
+    categories.map do |category|
+      activities_by_category[category.name] = [] if activities_by_category.keys.exclude?(category.name)
+    end
+    activities_by_category
+  end
+
 end

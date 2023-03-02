@@ -36,7 +36,9 @@ class Api::V1::WellnessActivitiesController < ApplicationController
     render :index
   end
 
-  def user_activities_count_by_category
+  def user_activities_by_category
+    @activities_by_category = User.find(params[:id]).activity_by_category_breakdown
+    render partial: 'activities_by_category'
   end
 
   private
