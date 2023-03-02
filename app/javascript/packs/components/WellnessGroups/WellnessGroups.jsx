@@ -25,7 +25,7 @@ function WellnessGroups() {
     <header>Groups</header>
       <div className="wellness-group-wrapper">
         {wellnessGroups && wellnessGroups.map(group => (
-          <Link to={`${group.id}`} key={group.id} >
+          <Link to={`groups/${group.id}`} key={group.id} >
             <WellnessGroupItem
               key={group.id}
               group={group}
