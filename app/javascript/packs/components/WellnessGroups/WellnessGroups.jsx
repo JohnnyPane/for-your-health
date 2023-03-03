@@ -21,7 +21,7 @@ function WellnessGroups() {
   }, [])
 
   return (
-    <>
+    <div className="page-content">
     <header>Groups</header>
       <div className="wellness-group-wrapper">
         {wellnessGroups && wellnessGroups.map(group => (
@@ -33,7 +33,7 @@ function WellnessGroups() {
           </Link>
         ))}
       </div>
-    </>
+    </div>
   )
 }
 

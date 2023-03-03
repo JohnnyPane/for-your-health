@@ -19,12 +19,15 @@
  }
 
  #wellness-app {
-  display: flex;
+  display: grid;
+  grid-template-columns: 20% 80%;
  }
 
 .navbar-wrapper {
   display: flex;
-  width: 20%;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
   height: 100vh;
   align-items: center;
   justify-content: center;

@@ -24,7 +24,7 @@ function UserCategory() {
   }, [])
 
   return (
-    <>
+    <div className="page-content">
       <header>{userCategory.name}</header>
       {userResources && userResources.map(resource => (
         <UserResourceItem 
@@ -32,7 +32,7 @@ function UserCategory() {
           resource={resource}
         />
       ))}
-    </>
+    </div>
   )
 }
 

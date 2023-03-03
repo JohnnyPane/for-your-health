@@ -20,15 +20,15 @@ function UserCategories(props) {
 
   return (
     <>
-    <header>Categories</header>
+      <header>Categories</header>
       <div className="category-wrapper">
         {userCategories && userCategories.map(category => (
-         <Link to={`/user/${user.id}/categories/${category.id}`} key={category.id} >
+        <Link to={`/user/${user.id}/categories/${category.id}`} key={category.id} >
             <UserCategoryItem
               key={category.id}
               category={category}
             />
-         </Link>
+        </Link>
         ))}
       </div>
     </>

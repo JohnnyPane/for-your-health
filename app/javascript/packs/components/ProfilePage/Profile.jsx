@@ -7,7 +7,7 @@ import UserActivityRadar from '../WellnessActivities/UserActivityRadar'
 function Profile() {
 
   return (
-    <div>
+    <div className="page-content">
       <div className='user-categories-wrapper'>
         <UserActivityRadar />
         <UserCategories/>

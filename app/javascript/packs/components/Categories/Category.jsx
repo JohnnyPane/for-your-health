@@ -10,7 +10,7 @@ function Category(props) {
   }
 
   return (
-   <div className={selected ? 'category-display-name' : 'category-name'} onClick={selectCategory}>
+   <div className={selected ? 'page-content category-display-name' : 'page-content category-name'} onClick={selectCategory}>
     {category.name}
    </div>
   )

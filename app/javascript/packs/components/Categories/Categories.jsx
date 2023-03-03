@@ -47,8 +47,8 @@ function Categories() {
   }
 
   return (
-    <>
-    <header>Categories</header>
+    <div className="page-content">
+      <header>Categories</header>
       <div className="category-wrapper">
         {categories && categories.map(category => (
           <Category 
@@ -62,7 +62,7 @@ function Categories() {
       <button className="btn btn-outline-success btn-block" onClick={createUserCategories}>
           Save Categories
       </button>
-    </>
+    </div>
   )
 }
 
